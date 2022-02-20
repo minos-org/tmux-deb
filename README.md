@@ -1,2 +1,1 @@
-# tmux-deb
-tmux packaging
+debian/README.source

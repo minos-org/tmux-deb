@@ -1,0 +1,50 @@
+Source: tmux
+Section: utils
+Priority: optional
+Maintainer: Javier López <m@javier.io>
+Build-Depends: debhelper (>= 9), dh-exec (>= 0.12)
+Standards-Version: 3.9.4
+Homepage: https://github.com/tmux/tmux/wiki
+Vcs-Browser: https://github.com/tmux
+
+Package: tmux-2.2
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tmux is a terminal multiplexer.
+ Tmux enables a number of terminals to be created, accessed, and controlled
+ from a single screen.
+
+Package: tmux-2.4
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tmux is a terminal multiplexer.
+ Tmux enables a number of terminals to be created, accessed, and controlled
+ from a single screen.
+
+Package: tmux-2.6
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tmux is a terminal multiplexer.
+ Tmux enables a number of terminals to be created, accessed, and controlled
+ from a single screen.
+
+Package: tmux-2.8
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tmux is a terminal multiplexer.
+ Tmux enables a number of terminals to be created, accessed, and controlled
+ from a single screen.
+
+Package: tmux-3.0
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tmux is a terminal multiplexer.
+ Tmux enables a number of terminals to be created, accessed, and controlled
+ from a single screen.
+
+Package: tmux-3.2
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tmux is a terminal multiplexer.
+ Tmux enables a number of terminals to be created, accessed, and controlled
+ from a single screen.

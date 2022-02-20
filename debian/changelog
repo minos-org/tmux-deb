@@ -1,0 +1,6 @@
+tmux (1:202108161021+gitf943082-minos) focal; urgency=low
+
+  * initial recipe
+    https://code.launchpad.net/~minos-archive/+recipe/tmux
+
+ -- Javier López <m@javier.io>  Tue, 16 Aug 2016 10:21:10 -0500
