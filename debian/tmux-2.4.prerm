@@ -1,0 +1,30 @@
+#!/bin/sh
+set -e
+
+package="tmux-2.4"
+package_dir="/usr/share/minos/tmux"
+diverge_dir="${package_dir}/diverge"
+
+users="$(awk -F: '{if ($3 >= 1000 && $3 < 60000) print $1}' /etc/passwd)"
+
+_undiverge_element() {
+    _diverge__orig="${1}"
+    _diverge__backup="$(printf "%s\\n" "${_diverge__orig}" | busybox sed 's:/:##:g')"
+
+    if LC_ALL=C dpkg-divert --list "${package}" | \
+        grep -xFq "diversion of ${_diverge__orig} to ${diverge_dir}/${_diverge__backup} by ${package}"; then
+        #busybox grep don't support the -x flag in old releases
+        busybox rm -rf "${_diverge__orig}"
+        dpkg-divert --package "${package}" --remove "${_diverge__orig}"
+        busybox rmdir "${diverge_dir}" 2>/dev/null || :
+    fi
+}
+
+case "${1}" in
+    upgrade|deconfigure|remove)
+        _undiverge_element /usr/bin/tmux "/usr/bin/${package}"
+        ;;
+esac
+
+#DEBHELPER#
+exit 0
