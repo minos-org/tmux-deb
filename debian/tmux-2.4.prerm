@@ -16,6 +16,7 @@ _undiverge_element() {
         #busybox grep don't support the -x flag in old releases
         busybox rm -rf "${_diverge__orig}"
         dpkg-divert --package "${package}" --remove "${_diverge__orig}"
+        busybox mv "${diverge_dir}"/"${_diverge__backup}" "${_diverge__orig}" || :
         busybox rmdir "${diverge_dir}" 2>/dev/null || :
     fi
 }
